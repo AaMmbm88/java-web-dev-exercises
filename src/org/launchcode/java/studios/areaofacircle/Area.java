@@ -11,10 +11,10 @@ public class Area {
         System.out.println("Enter radius of circle in parsecs: ");
         Double circleRadius = input.nextDouble();
 
-        if (circleRadius < 0 || circleRadius.isNaN()){
-            System.out.println("Error, radius must be a positive number. Thank you and goodbye!");
-            input.close();
-        }
+        while (circleRadius < 0){
+            System.out.println("Error, radius must be a positive number. Please re-enter radius of circle.");
+            circleRadius = input.nextDouble();
+        };
 
         Double area = getArea(circleRadius);
 
