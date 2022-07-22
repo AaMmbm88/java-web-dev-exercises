@@ -23,14 +23,16 @@ public class CountingCharacters {
         for (char c : charactersInPassage){
             int count = 0;
             for (int i = 0; i < charactersInPassage.length; i++){
+                if (Character.isLetter(c)){
+                    if (c == charactersInPassage[i]) {
+                        count++;
+                        do{
+                            charCount.put(c, count);
 
-            if (c == charactersInPassage[i]) {
-                count++;
-                do{
-                    charCount.put(c, count);
+                        } while  (!charCount.containsKey(c));
+                    }
+                }
 
-                } while  (!charCount.containsKey(c));
-            }
             }
         }
         for (Map.Entry<Character,Integer> item:charCount.entrySet()){
@@ -38,4 +40,5 @@ public class CountingCharacters {
         }
 
     }
+
 }
